@@ -20,7 +20,7 @@ Rather than dropping or keeping columns on gut feeling, I ran the actual hypothe
 - **ANOVA (`f_oneway`)** for numerical features against the three-class target, since I've got more than two categories to compare
 - **Chi-squared test** for the one remaining categorical feature (`koi_tce_delivname`) against the target
 
-Everything with p < 0.05 was kept. This left 37 numerical columns confirmed as statistically associated with the disposition, and the chi-squared test confirmed the categorical column was relevant too.
+Everything with p < 0.05 was kept. This left 37 numerical columns confirmed as statistically associated with the disposition, and the chi-squared test confirmed the categorical column was not relevant.
 
 ### 3. Train/test split — done early, on purpose
 The split happens *before* any imputation or outlier handling. This is deliberate — if you impute or cap outliers using statistics computed across the whole dataset, information from the test set leaks into training, and your evaluation numbers stop meaning anything.
